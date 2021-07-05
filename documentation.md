@@ -6,6 +6,8 @@
 
 ## Introduction
 
+This application will be supporting Solent University students to be inspired by each other using an application where they can upload their creativity to an image board.
+
 ## Methods
 
 1. To develop this application I used React. React is a User Interface JavaScript library. It it used for building UI components which is well suited for this project. To start the app development I created a simple Title.js which is the main page for the app. For styling I made index.css which has all the styling for the single-page.
@@ -23,3 +25,7 @@
 7. Now the application had its layout set. I then created a modal box view for each image using a clickevent. So when a user clicks on an image it will display a modal view in front of the web application. 
 
 8. Lastly I added some animation to the coding. I animated the modal so is it pops in to view from the top down making the background slightly opaque. I also animated a slide to the right motion when a new image is uploaded.
+
+## Conclusion
+
+I am very happy how this single-page application turned out, It is visually appealing because I have organised the elements very neatly. I have added modal views and animations to give it a dynamic feel when in use. The main purpose is so when a person uses this they can instantly see what other users are posting in real-time. It is essentially an image board in hope of inspiration from each post. 
