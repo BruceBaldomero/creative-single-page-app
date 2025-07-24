@@ -29,3 +29,7 @@ This application will be supporting Solent University students to be inspired by
 ## Conclusion
 
 I am very happy how this single-page application turned out, It is visually appealing because I have organised the elements very neatly. I have added modal views and animations to give it a dynamic feel when in use. The main purpose is so when a person uses this they can instantly see what other users are posting in real-time. It is essentially an image board in hope of inspiration from each post. 
+
+npm start = run locally
+
+npm build then npm run deply = after changes to update main github site

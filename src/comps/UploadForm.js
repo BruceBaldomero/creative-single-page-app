@@ -28,10 +28,10 @@ const UploadForm = () => {
     if (password === CORRECT_PASSWORD) {
       setIsAuthenticated(true);
       setPassword(''); // Clear the password input after successful entry
-      alert('Upload unlocked!'); // Provide feedback to the user
+      alert('UPLOAD UNLOCKED!'); // Provide feedback to the user
     } else {
-      alert('Incorrect password. Please try again.');
-      setError('Incorrect password.'); // Set an error state for display if you like
+      alert('INCORRECT PASSWORD, PLEASE TRY AGAIN.'); // Alert the user if the password is wrong
+      setError('INCORRECT PASSWORD.'); // Set an error state for display if you like
       setPassword(''); // Clear the password input after failed attempt
     }
   };
@@ -55,15 +55,15 @@ const UploadForm = () => {
       {!isAuthenticated ? (
         // IF NOT AUTHENTICATED: Show the password input form
         <div className="password-lock-container">
-          <p>Enter password to enable uploads:</p>
+          {/*<p>ENTER PASSWORD TO ENABLE UPLOADS:</p>*/}
           <input
             type="password"
-            placeholder="Enter password"
+            placeholder="PASSWORD"
             value={password}
             onChange={handlePasswordChange}
             required
           />
-          <button type="submit" onClick={handlePasswordSubmit}>Unlock Upload</button>
+          <button type="submit" onClick={handlePasswordSubmit}>&#10140;</button>
           {error && <div className="error">{error}</div>} {/* Display error if password is wrong */}
         </div>
       ) : (
@@ -79,7 +79,7 @@ const UploadForm = () => {
             { file && <ProgressBar file={file} setFile={setFile} /> }
           </div>
           {/* Optional: Add a button to re-lock the upload if needed */}
-          <button onClick={() => setIsAuthenticated(false)} style={{marginTop: '10px'}}>Lock Upload</button>
+          <button onClick={() => setIsAuthenticated(false)} style={{marginTop: '10px'}}>LOCK UPLOAD</button>
         </>
       )}
     </form>
