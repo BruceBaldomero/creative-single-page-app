@@ -2,7 +2,7 @@
   "name": "creativeappjoe",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/BruceBaldomero/creative-single-page-app",
+  "homepage": "https://BruceBaldomero.github.io/creative-single-page-app",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
