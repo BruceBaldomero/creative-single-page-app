@@ -1,43 +1,50 @@
-:root{
+:root {
   --primary: #000;
   --secondary: #4e4e4e;
   --error: #ff4a4a;
 }
 
 /* base styles & title */
-body{
+body {
   font-family: "Roboto";
   color: var(--secondary);
 }
-.App{
+
+.App {
   max-width: 960px;
   margin: 0 auto;
 }
-.title h1{
+
+.title h1 {
   color: var(--primary);
   font-size: 1.2rem;
   letter-spacing: 2px;
   font-weight: normal;
 }
-.title h2, .title p{
+
+.title h2,
+.title p {
   text-align: center;
 }
-.title h2{
+
+.title h2 {
   margin-top: 60px;
   font-size: 2.6rem;
 }
 
 /* upload form styles */
-form{
+form {
   margin: 30px auto 10px;
   text-align: center;
 }
-label input{
+
+label input {
   height: 0;
   width: 0;
   opacity: 0;
 }
-label{
+
+label {
   display: block;
   width: 30px;
   height: 30px;
@@ -49,38 +56,43 @@ label{
   font-weight: bold;
   font-size: 24px;
 }
-label:hover{
+
+label:hover {
   background: var(--primary);
   color: white;
 }
-.output{
+
+.output {
   height: 60px;
   font-size: 0.8rem;
 }
-.error{
+
+.error {
   color: var(--error);
 }
 
-.progress-bar{
+.progress-bar {
   height: 20px;
   background: var(--primary);
   margin-top: 20px;
 }
 
-.img-grid{
+.img-grid {
   margin: 20px auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 40px;
 }
-.img-wrap{
+
+.img-wrap {
   overflow: hidden;
   height: 0;
   padding: 50% 0;
   position: relative;
   opacity: 0.8;
 }
-.img-wrap img{
+
+.img-wrap img {
   min-width: 100%;
   min-height: 100%;
   max-width: 150%;
@@ -89,19 +101,188 @@ label:hover{
   left: 0;
 }
 
-.backdrop{
+.backdrop {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
 }
-.backdrop img{
+
+.backdrop img {
   display: block;
   max-width: 60%;
   max-height: 80%;
   margin: 60px auto;
-  box-shadow: 3px 5px 7px rgba(0,0,0,0.5);
+  box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.5);
   border: 3px solid white;
+}
+
+/* Styling for the overall UploadForm container */
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  /* Stack elements vertically */
+  align-items: center;
+  /* Center horizontally */
+  padding: 2em;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Slightly transparent background */
+  backdrop-filter: blur(5px);
+  /* Optional: Adds a blur effect */
+  max-width: 400px;
+  /* Limit width */
+  margin: 2em auto;
+  /* Center the form on the page */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Styling for the password lock container */
+.password-lock-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  /* Space between elements */
+  width: 100%;
+  /* Take full width of parent form */
+  padding: 1em;
+}
+
+/* Password prompt text */
+.password-prompt {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1em;
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+
+/* Password input field */
+.password-input {
+  width: 80%;
+  /* Adjust width as needed */
+  padding: 12px 15px;
+  border: 1px solid #666;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 1em;
+  outline: none;
+  /* Remove outline on focus */
+  transition: border-color 0.3s ease;
+}
+
+.password-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.password-input:focus {
+  border-color: #007bff;
+  /* Highlight on focus */
+}
+
+/* Unlock button */
+.unlock-button {
+  background-color: #007bff;
+  /* Primary blue */
+  color: #ffffff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 80%;
+  /* Match input width */
+}
+
+.unlock-button:hover {
+  background-color: #0056b3;
+  /* Darker blue on hover */
+  transform: translateY(-2px);
+  /* Slight lift effect */
+}
+
+.unlock-button:active {
+  transform: translateY(0);
+}
+
+/* Password error message */
+.password-error-message {
+  color: #dc3545;
+  /* Red for error */
+  font-size: 0.9em;
+  margin-top: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+
+/* Styling for the lock upload button (optional, if you keep it) */
+.lock-upload-button {
+  background-color: #6c757d;
+  /* Grey button */
+  color: #ffffff;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  /* Space from other elements */
+}
+
+.lock-upload-button:hover {
+  background-color: #5a6268;
+}
+
+/* Ensure your original upload label/input looks good too */
+/* This assumes your existing + button is part of a label */
+.upload-label {
+  /* Adjust these to match your existing '+' button styling */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  /* Example size */
+  height: 60px;
+  /* Example size */
+  border-radius: 50%;
+  /* Make it circular */
+  border: 2px solid #007bff;
+  /* Example border */
+  color: #007bff;
+  /* Example color */
+  font-size: 2.5em;
+  /* Large plus sign */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+  /* Space below the button */
+}
+
+.upload-label:hover {
+  background-color: rgba(0, 123, 255, 0.1);
+  transform: scale(1.05);
+}
+
+.file-input {
+  display: none;
+  /* Hide the default file input */
+}
+
+/* Add any other general styling for your output div or progress bar if needed */
+.output {
+  margin-top: 20px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.output .error {
+  color: #dc3545;
+  margin-bottom: 10px;
 }
