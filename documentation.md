@@ -32,4 +32,4 @@ I am very happy how this single-page application turned out, It is visually appe
 
 npm start = run locally
 
-npm build then npm run deply = after changes to update main github site
+npm run build then npm run deploy = after changes to update main github site
