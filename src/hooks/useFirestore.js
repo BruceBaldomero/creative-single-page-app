@@ -3,6 +3,7 @@ import { projectFirestore } from '../firebase/config';
 
 const useFirestore = (collection) => {
   const [docs, setDocs] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const unsub = projectFirestore.collection(collection)
@@ -13,12 +14,15 @@ const useFirestore = (collection) => {
           documents.push({...doc.data(), id: doc.id});
         });
         setDocs(documents);
+        setError(null);
+      }, err => {
+        setError(err.message);
       });
 
     return () => unsub();
   }, [collection]);
 
-  return { docs };
+  return { docs, error };
 }
 
 export default useFirestore;
